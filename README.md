@@ -1,9 +1,6 @@
-# attys
-Archive of the Attys hard/software
+# Archive of the Attys hard/software
 
 ## Attys is an open source high precision bluetooth biomedical sensor
-
-Measure ECG, EMG, EEG, EOG, acceleration, magnetic fields, voltage or resistance. 
 
 ![alt tag](attys_emg_measurement.jpg)
 ![alt tag](attyshrv2.jpg)

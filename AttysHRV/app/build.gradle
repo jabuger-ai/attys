@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+
+
+    defaultConfig {
+        applicationId "tech.glasgowneuro.attyshrv"
+        minSdk 34
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 34
+        versionCode 8
+        versionName "1.6"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+                arguments "-DANDROID_STL=c++_shared", "-DANDROID_ARM_NEON=TRUE"
+            }
+        }
+        ndk {
+            //noinspection ChromeOsAbiSupport
+            abiFilters 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        prefab true
+    }
+    sourceSets {
+        main {
+            String attyscomm = '../../AttysComm/app/src/main/'
+            java {
+                srcDir attyscomm + '/java'
+            }
+        }
+    }
+    namespace 'tech.glasgowneuro.attyshrv'
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'uk.me.berndporr:iirj:1.7'
+    implementation 'com.google.oboe:oboe:1.10.0'
+}

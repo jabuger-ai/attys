@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "tech.glasgowneuro.attysscope2"
+        minSdk 33
+        //noinspection EditedTargetSdkVersion
+        targetSdk 36
+        versionCode 62
+        versionName "3.1.10"
+    }
+    buildTypes {
+        debug {
+            manifestPlaceholders = [crashlyticsCollection:"false"]
+        }
+        release {
+            manifestPlaceholders = [crashlyticsCollection:"true"]
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res/menu']
+            String attyscomm = '../../AttysComm/app/src/main/'
+            java {
+                srcDir attyscomm + '/java'
+            }
+        }
+    }
+    namespace 'tech.glasgowneuro.attysscope2'
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.media:media:1.7.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation group: 'uk.me.berndporr', name:'iirj', version: '1.7'
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+    implementation 'com.androidplot:androidplot-core:1.5.11'
+    implementation 'com.google.android.gms:play-services-base:18.7.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-analytics:22.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics:19.4.4'
+}
+
