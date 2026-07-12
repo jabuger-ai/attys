@@ -1,5 +1,25 @@
-#ifndef _MPU9250_H_
-#define _MPU9250_H_
+/**
+   mpu9250 Constants
+
+   Copyright (C) 2016, Bernd Porr, mail@berndporr.me.uk
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+**/
+
+#ifndef _MPU9250
+#define _MPU9250
 
 #define MPU9250_DEFAULT_ADDRESS         0xD1
 #define MPU9250_ALT_DEFAULT_ADDRESS     0xD2   
@@ -86,19 +106,16 @@
 #define MPU9250_ZA_OFFSET_H             0x7D
 #define MPU9250_ZA_OFFSET_L             0x7E
 
-//reset values
 #define WHOAMI_RESET_VAL                0x71
 #define POWER_MANAGMENT_1_RESET_VAL     0x01
 #define DEFAULT_RESET_VALUE             0x00
 
 #define WHOAMI_DEFAULT_VAL              0x68
 
-//CONFIG register masks
 #define MPU9250_FIFO_MODE_MASK          0x40
 #define MPU9250_EXT_SYNC_SET_MASK       0x38
 #define MPU9250_DLPF_CFG_MASK           0x07
 
-//GYRO_CONFIG register masks
 #define MPU9250_XGYRO_CTEN_MASK         0x80
 #define MPU9250_YGYRO_CTEN_MASK         0x40
 #define MPU9250_ZGYRO_CTEN_MASK         0x20
@@ -117,11 +134,8 @@
 #define MPU9250_FULL_SCALE_8G           (2 << 3)
 #define MPU9250_FULL_SCALE_16G          (3 << 3)
 
-//ACCEL_CONFIG register masks
 #define MPU9250_AX_ST_EN_MASK           0x80
 #define MPU9250_AY_ST_EN_MASK           0x40
-
-///////////////////////////////////////////
 
 #define MPUREG_I2C_MST_CTRL        0x24
 #define MPUREG_I2C_SLV0_ADDR       0x25
@@ -173,23 +187,22 @@
 #define MPUREG_I2C_SLV3_DO         0x66
 #define MPUREG_I2C_MST_DELAY_CTRL  0x67
 
-#define AK8963_I2C_ADDR             0x0c//0x18
+#define AK8963_I2C_ADDR             0x0c
 #define AK8963_Device_ID            0x48
  
 #define AK8963_ADDRESS 0x0C
-#define WHO_AM_I_AK8963 0x00 // should return 0x48
+#define WHO_AM_I_AK8963 0x00
 #define INFO 0x01
-#define AK8963_ST1 0x02 // data ready status bit 0
-#define AK8963_XOUT_L 0x03 // data
+#define AK8963_ST1 0x02
+#define AK8963_XOUT_L 0x03
 #define AK8963_XOUT_H 0x04
 #define AK8963_YOUT_L 0x05
 #define AK8963_YOUT_H 0x06
 #define AK8963_ZOUT_L 0x07
 #define AK8963_ZOUT_H 0x08
-#define AK8963_ST2 0x09 // Data overflow bit 3 and data read error status bit 2
-#define AK8963_CNTL 0x0A // Power down (0000), single-measurement (0001), self-test (1000) and Fuse ROM (1111) modes on bits 3:0
+#define AK8963_ST2 0x09
+#define AK8963_CNTL 0x0A
 
-// Read-only Reg
 #define AK8963_WIA                  0x00
 #define AK8963_INFO                 0x01
 #define AK8963_ST1                  0x02
@@ -200,14 +213,12 @@
 #define AK8963_HZL                  0x07
 #define AK8963_HZH                  0x08
 #define AK8963_ST2                  0x09
-// Write/Read Reg
 #define AK8963_CNTL1                0x0A
 #define AK8963_CNTL2                0x0B
 #define AK8963_ASTC                 0x0C
 #define AK8963_TS1                  0x0D
 #define AK8963_TS2                  0x0E
 #define AK8963_I2CDIS               0x0F
-// Read-only Reg ( ROM )
 #define AK8963_ASAX                 0x10
 #define AK8963_ASAY                 0x11
 #define AK8963_ASAZ                 0x12
