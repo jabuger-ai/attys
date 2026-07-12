@@ -41,10 +41,15 @@ UDP packets are always transmitted as CSV.
 21. RAW_AccX of the 2nd Attys
 22. ...
 
-
-## Windows installer
-
-[is here](installer/attys_scope_installer.msi)
+## Compile under Linux
+* Install [attys-comm](../attys-comm)
+* Install the IIR filter library https://github.com/berndporr/iir1
+* Install the other packages: `apt-get install qt5-qmake, g++, qtbase5-dev-tools, qtdeclarative5-dev-tools, libbluetooth-dev, qtbase5-dev, qt5-default, libqt5multimedia5-plugins, qtmultimedia5-dev`
+* cd attys-scope
+* qmake
+* make
+* make install
+* Start by typing "attys-scope"
 
 ## Ubuntu packages for Ubuntu LTS releases
 Add these two repositories...
@@ -54,3 +59,7 @@ sudo add-apt-repository ppa:berndporr/dsp
 ```
 ...and then select attys-scope. This will then install also
 the other required packages.
+
+## Windows installer
+
+[is here](installer/attys_scope_installer.msi)
