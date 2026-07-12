@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 37
+
+    defaultConfig {
+        applicationId "tech.glasgowneuro.attysecg"
+        minSdkVersion 30
+        targetSdkVersion 37
+        versionCode 70
+        versionName "1.8.9"
+    }
+    buildTypes {
+        debug {
+            manifestPlaceholders = [crashlyticsCollection: "false"]
+        }
+        release {
+            ndk {
+                debugSymbolLevel = 'SYMBOL_TABLE'
+            }
+            minifyEnabled false
+            manifestPlaceholders = [crashlyticsCollection: "true"]
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res/menu']
+            String attyscomm = '../../AttysComm/app/src/main/'
+            java {
+                srcDir attyscomm + '/java'
+            }
+        }
+    }
+    namespace 'tech.glasgowneuro.attysecg'
+}
+
+dependencies {
+    implementation 'com.google.android.material:material:1.14.0'
+    repositories {
+        google()
+    }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'uk.me.berndporr:iirj:1.7'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.androidplot:androidplot-core:1.5.11'
+    implementation 'com.google.android.gms:play-services-base:18.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+}
+
