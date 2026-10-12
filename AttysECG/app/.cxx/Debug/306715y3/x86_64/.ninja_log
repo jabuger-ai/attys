@@ -1,0 +1,4 @@
+# ninja log v5
+0	786	1791844387823007495	CMakeFiles/attysecg_audio.dir/native-audio-jni.cpp.o	2200d3b39bb7ce26
+0	1007	1791844388039007015	CMakeFiles/attysecg_audio.dir/AmbientAudio.cpp.o	fba93f9a3a386384
+1008	1035	1791844388080006924	/home/jacob-manning/attys/AttysECG/app/build/intermediates/cxx/Debug/306715y3/obj/x86_64/libattysecg_audio.so	eed1672dcc7fd2cf

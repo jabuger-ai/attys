@@ -146,6 +146,8 @@ public class AttysECG extends AppCompatActivity {
 
     private BeepGenerator beepGenerator = null;
 
+    private AmbientAudioEngine ambientAudioEngine = null;
+
     private ServiceConnection serviceConnection = null;
 
     private final DataRecorder dataRecorder = new DataRecorder();
@@ -737,6 +739,9 @@ public class AttysECG extends AppCompatActivity {
         iirNotch_III = null;
 
         startRRrec();
+
+        ambientAudioEngine = new AmbientAudioEngine(this);
+        ambientAudioEngine.start();
     }
 
     private void adjustMenu() {
@@ -774,6 +779,9 @@ public class AttysECG extends AppCompatActivity {
         }
         if (beepGenerator != null) {
             beepGenerator.doBeep();
+        }
+        if (ambientAudioEngine != null) {
+            ambientAudioEngine.sendHR(bpm);
         }
         this.bpm = bpm;
     }
@@ -889,6 +897,11 @@ public class AttysECG extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        if (ambientAudioEngine != null) {
+            ambientAudioEngine.stop();
+            ambientAudioEngine = null;
+        }
 
         dataRecorder.stopRec();
         stopRRRec();

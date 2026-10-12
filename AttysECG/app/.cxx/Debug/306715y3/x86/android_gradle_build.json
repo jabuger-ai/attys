@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/home/jacob-manning/attys/AttysECG/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/jacob-manning/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/jacob-manning/attys/AttysECG/app/.cxx/Debug/306715y3/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/jacob-manning/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/jacob-manning/attys/AttysECG/app/.cxx/Debug/306715y3/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "attysecg_audio::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "attysecg_audio",
+      "output": "/home/jacob-manning/attys/AttysECG/app/build/intermediates/cxx/Debug/306715y3/obj/x86/libattysecg_audio.so",
+      "runtimeFiles": [
+        "/home/jacob-manning/.gradle/caches/8.14.5/transforms/ad06d3a0383875dfa85adf19176cd39f/transformed/jetified-oboe-1.9.0/prefab/modules/oboe/libs/android.x86/liboboe.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/jacob-manning/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/jacob-manning/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
