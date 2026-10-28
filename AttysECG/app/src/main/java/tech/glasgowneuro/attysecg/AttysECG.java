@@ -514,46 +514,25 @@ public class AttysECG extends AppCompatActivity {
                         int nRealChN = 0;
 
                         if (full2chECGrecording) {
-                            if (showEinthoven) {
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[0];
-                                tmpSample[nRealChN++] = I;
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[1];
-                                tmpSample[nRealChN++] = II;
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[2];
-                                tmpSample[nRealChN++] = III;
-                            }
-                            if (showAugmented) {
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[3];
-                                tmpSample[nRealChN++] = aVR;
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[4];
-                                tmpSample[nRealChN++] = aVL;
-                                tmpMin[nRealChN] = -max;
-                                tmpMax[nRealChN] = max;
-                                tmpTick[nRealChN] = ytick;
-                                tmpLabels[nRealChN] = labels[5];
-                                tmpSample[nRealChN++] = aVF;
-                            }
-                        } else {
-                            tmpMin[nRealChN] = -max;
-                            tmpMax[nRealChN] = max;
+                            // Channel 1: EEG
+                            tmpMin[nRealChN] = -max * 0.5f;
+                            tmpMax[nRealChN] = max * 0.5f;
                             tmpTick[nRealChN] = ytick;
-                            tmpLabels[nRealChN] = "Ch1";
+                            tmpLabels[nRealChN] = "EEG (Ch1)";
                             tmpSample[nRealChN++] = II;
+
+                            // Channel 2: ECG (with 2x range to prevent overlap)
+                            tmpMin[nRealChN] = -max * 2.0f;
+                            tmpMax[nRealChN] = max * 2.0f;
+                            tmpTick[nRealChN] = ytick;
+                            tmpLabels[nRealChN] = "ECG (Ch2)";
+                            tmpSample[nRealChN++] = III;
+                        } else {
+                            tmpMin[nRealChN] = -max * 2.0f;
+                            tmpMax[nRealChN] = max * 2.0f;
+                            tmpTick[nRealChN] = ytick;
+                            tmpLabels[nRealChN] = "ECG (Ch2)";
+                            tmpSample[nRealChN++] = III;
                         }
 
                         if (infoView != null) {

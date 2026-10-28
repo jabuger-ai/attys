@@ -1,3 +1,0 @@
-/home/jacob-manning/attys/AttysECG/app/.cxx/Debug/306715y3/x86/CMakeFiles/attysecg_audio.dir
-/home/jacob-manning/attys/AttysECG/app/.cxx/Debug/306715y3/x86/CMakeFiles/edit_cache.dir
-/home/jacob-manning/attys/AttysECG/app/.cxx/Debug/306715y3/x86/CMakeFiles/rebuild_cache.dir

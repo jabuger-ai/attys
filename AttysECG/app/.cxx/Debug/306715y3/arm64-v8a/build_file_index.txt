@@ -1,1 +1,0 @@
-/home/jacob-manning/attys/AttysECG/app/src/main/cpp/CMakeLists.txt
