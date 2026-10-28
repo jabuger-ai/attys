@@ -1,0 +1,15 @@
+# Build outputs and C++ Caches
+.cxx/
+.gradle/
+build/
+**/build/
+*.apk
+*.aar
+
+# Android Studio & IDE
+.idea/
+*.iml
+local.properties
+.DS_Store
+deviceStreaming.xml
+captures/
