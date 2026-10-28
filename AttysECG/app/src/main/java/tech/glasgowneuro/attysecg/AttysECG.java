@@ -1299,11 +1299,14 @@ public class AttysECG extends AppCompatActivity {
             gain = gain_settings[1];
         }
 
-        mux = AttysComm.ADC_MUX_ECG_EINTHOVEN;
+  // TO CONFIGURE FOR EEG + ECG  mux = AttysComm.ADC_MUX_ECG_EINTHOVEN;
+  // FOR JUST ECG mux = AttysComm.ADC_MUX_NORMAL;
+        
+        mux = AttysComm.ADC_MUX_NORMAL;
         byte adcgain = (byte) (Integer.parseInt(prefs.getString("gainpref", "0")));
         attysService.getAttysComm().setAdc1_gain_index(adcgain);
         attysService.getAttysComm().setAdc0_mux_index(mux);
-        attysService.getAttysComm().setAdc2_gain_index(adcgain);
+        attysService.getAttysComm().setAdc2_gain_index(AttysComm.ADC_GAIN_12); // testing out Gain 8 first 
         attysService.getAttysComm().setAdc1_mux_index(mux);
 
         byte data_separator = (byte) (Integer.parseInt(prefs.getString("data_separator", "0")));
